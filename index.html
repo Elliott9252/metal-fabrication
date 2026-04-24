@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Welding & Fabrication</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Roboto;background:#0d0d0d;color:#fff;}
+header{background:linear-gradient(90deg,#ff6600,#ff0000);padding:20px;text-align:center;}
+header h1{font-family:Orbitron;}
+nav{background:#111;padding:10px;text-align:center;}
+nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:bold;}
+.hero{background:url('images/hero.jpg') center/cover no-repeat;height:400px;display:flex;align-items:center;justify-content:center;text-shadow:2px 2px 10px #000;}
+.section{padding:40px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+.card{background:#1a1a1a;padding:15px;border-radius:10px;transition:.3s;}
+.card:hover{transform:scale(1.05);box-shadow:0 0 15px #ff6600;}
+img{width:100%;border-radius:10px;}
+button{background:#ff6600;border:none;padding:10px 20px;color:#fff;cursor:pointer;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);justify-content:center;align-items:center;}
+.modal img{max-width:80%;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Elite Welding & Fabrication</h1>
+<p>Custom Metal • Precision Built</p>
+</header>
+
+<nav>
+<a href="#gallery">Work</a>
+<a href="#services">Services</a>
+<a href="#order">Preorder</a>
+</nav>
+
+<div class="hero">
+<h2>Professional Welding Solutions</h2>
+</div>
+
+<section id="gallery" class="section">
+<h2>Our Work</h2>
+<div class="grid">
+<div class="card"><img src="images/work1.jpg" onclick="openModal(this.src)"></div>
+<div class="card"><img src="images/work2.jpg" onclick="openModal(this.src)"></div>
+<div class="card"><img src="images/work3.jpg" onclick="openModal(this.src)"></div>
+<div class="card"><img src="images/work4.jpg" onclick="openModal(this.src)"></div>
+<div class="card"><img src="images/work5.jpg" onclick="openModal(this.src)"></div>
+<div class="card"><img src="images/work6.jpg" onclick="openModal(this.src)"></div>
+</div>
+</section>
+
+<section id="services" class="section">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">Custom Fabrication</div>
+<div class="card">Structural Welding</div>
+<div class="card">Automotive Work</div>
+<div class="card">Repairs</div>
+</div>
+</section>
+
+<section id="order" class="section">
+<h2>Preorder</h2>
+<form>
+<input placeholder="Name" style="width:100%;padding:10px;"><br><br>
+<input placeholder="Email" style="width:100%;padding:10px;"><br><br>
+<textarea placeholder="Project Details" style="width:100%;padding:10px;"></textarea><br><br>
+<button>Submit Request</button>
+</form>
+</section>
+
+<div class="modal" id="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
+
+<script>
+function openModal(src){
+ document.getElementById('modal').style.display='flex';
+ document.getElementById('modalImg').src=src;
+}
+function closeModal(){
+ document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
